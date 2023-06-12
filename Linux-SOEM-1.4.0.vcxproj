@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|ARM">
+      <Configuration>Debug</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|ARM">
+      <Configuration>Release</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|ARM64">
+      <Configuration>Debug</Configuration>
+      <Platform>ARM64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|ARM64">
+      <Configuration>Release</Configuration>
+      <Platform>ARM64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x86">
+      <Configuration>Debug</Configuration>
+      <Platform>x86</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x86">
+      <Configuration>Release</Configuration>
+      <Platform>x86</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{ee212e0f-d2ab-430b-b637-39aa6c074ab0}</ProjectGuid>
+    <Keyword>Linux</Keyword>
+    <RootNamespace>Linux_SOEM_1_4_0</RootNamespace>
+    <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
+    <ApplicationType>Linux</ApplicationType>
+    <ApplicationTypeRevision>1.0</ApplicationTypeRevision>
+    <TargetLinuxPlatform>Generic</TargetLinuxPlatform>
+    <LinuxProjectType>{D51BCBC9-82E9-4017-911E-C93873C4EA2B}</LinuxProjectType>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'" Label="Configuration">
+    <UseDebugLibraries>true</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'" Label="Configuration">
+    <UseDebugLibraries>false</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'" Label="Configuration">
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>WSL_1_0</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'" Label="Configuration">
+    <UseDebugLibraries>false</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>WSL_1_0</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <UseDebugLibraries>false</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'" Label="Configuration">
+    <UseDebugLibraries>false</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'" Label="Configuration">
+    <UseDebugLibraries>true</UseDebugLibraries>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="Shared" />
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <WSLPath>Ubuntu-22.04</WSLPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <ClCompile Include="demo\ect_m.c" />
+    <ClCompile Include="osal\osal.c" />
+    <ClCompile Include="oshw\nicdrv.c" />
+    <ClCompile Include="oshw\oshw.c" />
+    <ClCompile Include="soem\ethercatbase.c" />
+    <ClCompile Include="soem\ethercatcoe.c" />
+    <ClCompile Include="soem\ethercatconfig.c" />
+    <ClCompile Include="soem\ethercatdc.c" />
+    <ClCompile Include="soem\ethercateoe.c" />
+    <ClCompile Include="soem\ethercatfoe.c" />
+    <ClCompile Include="soem\ethercatmain.c" />
+    <ClCompile Include="soem\ethercatprint.c" />
+    <ClCompile Include="soem\ethercatsoe.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="osal\osal.h" />
+    <ClInclude Include="osal\osal_defs.h" />
+    <ClInclude Include="oshw\nicdrv.h" />
+    <ClInclude Include="oshw\oshw.h" />
+    <ClInclude Include="soem\ethercat.h" />
+    <ClInclude Include="soem\ethercatbase.h" />
+    <ClInclude Include="soem\ethercatcoe.h" />
+    <ClInclude Include="soem\ethercatconfig.h" />
+    <ClInclude Include="soem\ethercatconfiglist.h" />
+    <ClInclude Include="soem\ethercatdc.h" />
+    <ClInclude Include="soem\ethercateoe.h" />
+    <ClInclude Include="soem\ethercatfoe.h" />
+    <ClInclude Include="soem\ethercatmain.h" />
+    <ClInclude Include="soem\ethercatprint.h" />
+    <ClInclude Include="soem\ethercatsoe.h" />
+    <ClInclude Include="soem\ethercattype.h" />
+  </ItemGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\Storage\Resources\Code\Visual Studio\C Saves\Linux-SOEM-1.4.0\osal;D:\Storage\Resources\Code\Visual Studio\C Saves\Linux-SOEM-1.4.0\oshw;D:\Storage\Resources\Code\Visual Studio\C Saves\Linux-SOEM-1.4.0\soem;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <CLanguageStandard>Default</CLanguageStandard>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets" />
+</Project>
